@@ -1,0 +1,59 @@
+###Parte III - Processos & Jobs 
+
+1. Liste todos os processos;
+~/Doc/unix_tests ❯ ps
+
+2. Agora use o comando sleep 30 & ;
+~/Doc/unix_tests ❯ sleep 30 &
+
+3. Use a listagem de processos para encontrar o PID do processo que está executando o comando sleep 30 e termine a sua execução (mate o processo) ;
+~/Doc/unix_tests ❯ ps | grep sleep                       
+  10333 pts/0    00:00:00 sleep
+
+~/Doc/unix_tests ❯ kill 10333                            
+[1]  + 10333 terminated  sleep 30         
+
+4. Execute novamente o comando sleep 30 , mas agora sem o & . Depois, faça com que ele continue executando em background;
+~/Doc/unix_tests ❯ sleep 30
+^Z
+[1]  + 10345 suspended  sleep 30
+
+~/Doc/unix_tests ❯ bg                             
+[1]  + 10345 continued  sleep 30
+
+5. Crie um processo em background que rode o comando sleep por 300 segundos.
+~/Doc/unix_tests ❯ sleep 300 &
+
+6. Crie mais dois processos que rodem o comando sleep por 200 e 100 segundos, respectivamente.
+    Você deve criá-los em foreground (sem usar o & ) e suspendê-los (apertando ctrl+z ) após cada um começar a executar.
+~/Doc/unix_tests ❯ sleep 200                            
+^Z
+[2]  + 10363 suspended  sleep 200
+
+~/Doc/unix_tests ❯ bg                             
+[2]  - 10363 continued  sleep 200
+
+~/Doc/unix_tests ❯ sleep 100                           
+
+[3]  + 10365 suspended  sleep 100
+^Z
+~/Doc/unix_tests ❯ bg                           
+[3]  - 10365 continued  sleep 100
+
+7.Verifique que apenas o processo sleep 300 está em execução com o comando jobs . Suspenda a execução desse processo.
+    Você vai precisar trazer o processo para foreground ( fg ) e suspendê-lo ( ctrl+z ), ou enviar um sinal.
+~/Doc/unix_tests ❯ jobs                                  
+[1]  + running    sleep 300
+
+~/Doc/unix_tests ❯ fg %1                                 
+[1]  + 10397 running    sleep 300
+^Z
+[1]  + 10397 suspended  sleep 300
+
+8.Retome a execução do processo sleep 100 em background com o comando bg .
+    Termine a execução de todos os processos sleep (mate os processos) .
+~/Doc/unix_tests ❯ bg %3    
+
+~/Doc/unix_tests ❯ fg %3
+
+~/Doc/unix_tests ❯ kill %1 %2 %3 
