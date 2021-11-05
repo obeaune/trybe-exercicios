@@ -1,23 +1,48 @@
 body {
     width: 90%;
 }
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+nav li {
+    float: left;
+}
+
+nav li a {
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
 img {
     display: block;
     margin: auto;
 }
+
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
 }
+
 td, th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
 }
+
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+
 footer {
     margin-bottom: 200px;
 }
