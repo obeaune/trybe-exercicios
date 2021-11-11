@@ -1,26 +1,26 @@
-// Escreva um programa que receba o nome de uma peça de xadrez e retorne os movimentos que ela faz. 
+// Escreva um programa que converte uma nota dada em porcentagem (de 0 a 100) em conceitos de A a F. Siga essas regras:
+// Porcentagem >= 90 -> A
+// Porcentagem >= 80 -> B
+// Porcentagem >= 70 -> C
+// Porcentagem >= 60 -> D
+// Porcentagem >= 50 -> E
+// Porcentagem < 50 -> F
+// O programa deve retornar uma mensagem de erro e encerrar se a nota passada for menor que 0 ou maior que 100.
 
-let nomeDaPeca = "caValo";
-switch (nomeDaPeca.toLowerCase()) {
-  case "rainha":
-    console.log("Rainha (queen) -> Diagonal, horizontal e vertical.");
-    break;
-  case "rei":
-    console.log("Rei (king) -> Uma casa apenas para qualquer direção.");
-    break;
-  case "bispo":
-    console.log("Bispo (bishop) -> Diagonal.");
-    break;
-  case "cavalo":
-    console.log("Cavalo (knight) -> Único que pode pular sobre as peças; movimento 'L'.");
-    break;
-  case "torre":
-    console.log("Torre (rook) -> Horizontal e vertical.");
-    break;
-  case "peão":
-    console.log("Peão (pawn) -> Apenas uma casa para frente, no primeiro movimento podem ser duas casas.");
-    break;
-  default:
-    console.log("Atenção, erro! Peça inválida!");
-    break;
+let notaRecebida = 40;
+
+if (notaRecebida < 0 || notaRecebida > 100) {
+  console.log("Erro, nota inválida!");
+} else if (notaRecebida >= 90) {
+  console.log("Nota = 'A'.");
+} else if (notaRecebida >= 80) {
+  console.log("Nota = 'B'.");
+} else if (notaRecebida >= 70) {
+  console.log("Nota = 'C'.");
+} else if (notaRecebida >= 60) {
+  console.log("Nota = 'D'.");
+} else if (notaRecebida >= 50) {
+  console.log("Nota = 'E'.");
+} else {
+  console.log("Nota = 'F'.");
 }
