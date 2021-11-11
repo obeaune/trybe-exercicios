@@ -1,18 +1,26 @@
-// Faça um programa que defina três constantes com os valores dos três ângulos internos de um triângulo. Retorne true se os ângulos representarem os ângulos de um triângulo e false , caso contrário. Se algum ângulo for inválido o programa deve retornar uma mensagem de erro. 
-// Para os ângulos serem de um triângulo válido, a soma dos três devem ser 180 graus. 
-// Um ângulo será considerado inválido se não tiver um valor positivo. 
+// Escreva um programa que receba o nome de uma peça de xadrez e retorne os movimentos que ela faz. 
 
-let angA = 70;
-let angB = 40;
-let angC = 70;
-let somaDosAngulos = angA + angB + angC;
-
-if (angA > 0 && angB > 0 && angC > 0) {
-  if (somaDosAngulos === 180) {
-    console.log("True.");
-  } else {
-    console.log("False.");
-  }
-} else {
-  console.log("Erro: ângulo inválido.");
+let nomeDaPeca = "caValo";
+switch (nomeDaPeca.toLowerCase()) {
+  case "rainha":
+    console.log("Rainha (queen) -> Diagonal, horizontal e vertical.");
+    break;
+  case "rei":
+    console.log("Rei (king) -> Uma casa apenas para qualquer direção.");
+    break;
+  case "bispo":
+    console.log("Bispo (bishop) -> Diagonal.");
+    break;
+  case "cavalo":
+    console.log("Cavalo (knight) -> Único que pode pular sobre as peças; movimento 'L'.");
+    break;
+  case "torre":
+    console.log("Torre (rook) -> Horizontal e vertical.");
+    break;
+  case "peão":
+    console.log("Peão (pawn) -> Apenas uma casa para frente, no primeiro movimento podem ser duas casas.");
+    break;
+  default:
+    console.log("Atenção, erro! Peça inválida!");
+    break;
 }
