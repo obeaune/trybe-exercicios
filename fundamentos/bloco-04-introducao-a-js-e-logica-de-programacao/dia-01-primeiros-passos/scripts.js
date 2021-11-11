@@ -1,7 +1,7 @@
-let weekDay = "quarta-feira";
-if (weekDay === "segunda-feira" || weekDay === "terça-feira" || weekDay === "quarta-feira" || weekDay === "quinta-feira" || weekDay === "sexta-feira") {
-  console.log("Oba, mais um dia de aprendizado na Trybe >:D");
-}
-else {
-  console.log("FINALMENTE, descanso merecido UwU");
-}
+const a = 5;
+const b = 20;
+console.log("Adição de a e b: " + (a + b));
+console.log("Subtração de a e b: " + (a - b));
+console.log("Multiplicação de a + e: " + (a * b));
+console.log("Divisão de a e b: " + (a / b));
+console.log("Módulo de a e b: " + (a % b));
