@@ -1,7 +1,8 @@
+// Faça um programa que retorne o maior de dois números. Defina no começo do programa duas constantes com os valores que serão comparados.
 const a = 5;
 const b = 20;
-console.log("Adição de a e b: " + (a + b));
-console.log("Subtração de a e b: " + (a - b));
-console.log("Multiplicação de a + e: " + (a * b));
-console.log("Divisão de a e b: " + (a / b));
-console.log("Módulo de a e b: " + (a % b));
+if (a > b) {
+  console.log("O maior número é o da const A: " + a);
+} else {
+  console.log("O maior número é o da const B: " + b);
+}
