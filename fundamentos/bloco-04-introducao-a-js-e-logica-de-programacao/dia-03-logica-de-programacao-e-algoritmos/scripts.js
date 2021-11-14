@@ -5,7 +5,6 @@
 // *****
 // *****
 // *****
-let abelha = "abelha";
 let n = 5;
 let linha = "";
 let preenc = "*";
@@ -14,7 +13,6 @@ for (let i = 0; i < n; i += 1) {
 }
 for (let i = 0; i < n; i += 1){
   console.log(linha);
-  console.log(abelha);
 }
 
 // 2- Para o segundo exercício, faça o mesmo que antes, mas que imprima um triângulo retângulo com 5 asteriscos de base. Por exemplo:
@@ -24,12 +22,12 @@ for (let i = 0; i < n; i += 1){
 // ***
 // ****
 // *****
-// let n = 5;
-// let linha = "";
-// for (let index = 0; index < n; index += 1) {
-//   linha += "*";
-//   console.log(linha);
-// }
+let n = 5;
+let linha = "";
+for (let index = 0; index < n; index += 1) {
+  linha += "*";
+  console.log(linha);
+}
 
 // 3- Agora inverta o lado do triângulo. Por exemplo: 
 // n = 5
@@ -38,6 +36,22 @@ for (let i = 0; i < n; i += 1){
 //   ***
 //  ****
 // *****
+let arr = [];
+let n = 5;
+let str = "";
+for(let i = 0; i < n; i++){
+	arr.push(" ");
+}
+
+for(let i = 1; i <= n; i++){
+	str = "";
+	arr.shift();
+	arr.push("*");
+	for (let i = 0; i < n; i++) {
+		str += arr[i];
+	}
+	console.log(str);
+}
 
 //  4- Depois, faça uma pirâmide com n asteriscos de base: 
 // n = 5
@@ -45,3 +59,19 @@ for (let i = 0; i < n; i += 1){
 //   *
 //  ***
 // *****
+// fiz o contrário, depois atualizo o resto.
+function pir(n) {
+	let arr = [];
+	for (let i = 0; i < n; i++) {
+		arr.push("*");
+	}
+	for (let i = 1; i <= n/2+1; i++) {
+		let str = "";
+		for (let i = 0; i < n; i++) {
+			str += arr[i];
+		}
+		console.log(str);
+		arr[i-1] = " ";
+		arr[arr.length-i] = " ";
+	}
+}
