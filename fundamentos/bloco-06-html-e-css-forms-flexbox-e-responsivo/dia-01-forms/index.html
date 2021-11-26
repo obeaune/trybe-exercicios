@@ -7,13 +7,16 @@
   <title>Forms</title>
 </head>
 <body>
-  <h2>Formulário</h2>
+  <h2>Login</h2>
   <form action="" method="get">
     <label for="user">Email: </label>
-    <input type="email" id="user" name="Name">
-    <br>
+    <input type="email" id="user" name="Name" placeholder="Digite seu email" required autocomplete="off" autofocus><br><br>
+
     <label for="senha">Senha: </label>
-    <input type="password" id="senha" name="Password">
+    <input type="password" id="senha" name="Password" placeholder="Digite sua senha" required><br><br>
+
+    <input type="checkbox"><em>Lembre-me</em>
+    <button type="submit">Entrar</button>
   </form>
 </body>
 </html>
