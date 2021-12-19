@@ -63,13 +63,16 @@ getValueByNumber(lesson1, 0);
 // Output: false
 // console.log(Object.entries(lesson1)[0]);
 
-const verifyPair = (obj, key, value) => {
-  const arr = Object.entries(obj);
-  let trueOrFalse = false;
-  for (let i in arr) {
-    if (arr[i][0] === key && arr[i][1] === value) {
-      trueOrFalse = true;
-    }
-  } return trueOrFalse;
-}
-console.log(verifyPair(lesson3, 'turno', 'noite'));
+// const verifyPair = (obj, key, value) => {
+//   const arr = Object.entries(obj);
+//   let trueOrFalse = false;
+//   for (let i in arr) {
+//     if (arr[i][0] === key && arr[i][1] === value) {
+//       trueOrFalse = true;
+//     }
+//   } return trueOrFalse;
+// }
+
+// função refatorada;
+const verifyPair = (obj, key, value) => obj[key] === value ? true : false;
+verifyPair(lesson3, 'materia', 'Maria Clara');
