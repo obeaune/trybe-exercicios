@@ -76,3 +76,35 @@ getValueByNumber(lesson1, 0);
 // função refatorada;
 const verifyPair = (obj, key, value) => obj[key] === value ? true : false;
 verifyPair(lesson3, 'materia', 'Maria Clara');
+
+// bonus
+//  Crie uma função para contar quantos estudantes assistiram às aulas de Matemática. Use o objeto criado no exercício 5. 
+const verifyStudentsMath = (obj) => {
+  const arr = Object.entries(obj);
+  let quantStudents = 0;
+  for (let i = 0; i < arr.length; i += 1) {
+    if (arr[i][1]['materia'] === 'Matemática'){
+      quantStudents += arr[i][1]['numeroEstudantes'];
+    }
+  } return quantStudents;
+}
+verifyStudentsMath(allLessons);
+
+//  Crie uma função que deverá retornar um objeto que representa o relatório do professor ou professora, as aulas que ele ou ela ministrou e o número total de estudantes. Use o objeto criado no exercício 5: 
+// console.log(createReport(allLessons, 'Maria Clara'))
+  /* {
+    professor: 'Maria Clara',
+    aulas: [ 'Matemática', 'Matemática' ],
+    estudantes: 30
+  } */
+const createReport = (obj, nomeprof) => {
+  const quantAulas = [];
+  let quantStu = 0;
+  for (index in obj) {
+    if (obj[index]['professor'] === nomeprof) {
+      quantAulas.push(obj[index]['materia'])
+      quantStu += obj[index]['numeroEstudantes'];
+    }
+  } return {professor: nomeprof, aulas: quantAulas, estudantes: quantStu};
+}
+createReport(allLessons, 'Maria Clara');
