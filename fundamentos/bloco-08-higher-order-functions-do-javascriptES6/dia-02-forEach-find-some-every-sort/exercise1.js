@@ -63,7 +63,74 @@ const books = [
 
 // Adicione o código do exercício aqui:
 //  1 - Encontre o nome da primeira pessoa autora do livro nascida no ano de 1947. 
+// Dica: use a função find .
 
 function authorBornIn1947() {
-  // escreva aqui o seu código
+  return books.find((book) => book.author.birthYear === 1947).author.name;
 };
+
+// 2 - Retorne o nome do livro de menor nome. 
+//  Dica: use a função forEach . 
+
+function smallerName() {
+  let nameBook;
+  books.forEach((book) => {
+    if (!nameBook || book.name.length < nameBook.length) {
+      nameBook = book.name;
+    }
+  });
+
+  // Variável nameBook que receberá o valor do menor nome;
+  return nameBook;
+}
+
+// 3 - Encontre o primeiro livro cujo nome possui 26 caracteres.
+// const expectedResult = {
+//   author: {
+//     birthYear: 1948,
+//     name: 'George R. R. Martin',
+//   },
+//   genre: 'Fantasia',
+//   id: 1,
+//   name: 'As Crônicas de Gelo e Fogo',
+//   releaseYear: 1991,
+// };
+
+function getNamedBook() {
+  return books.find((book) => book.name.length === 26);
+}
+
+//  4 - Ordene os livros por data de lançamento em ordem decrescente.
+
+function booksOrderedByReleaseYearDesc() {
+  return books.sort((a, b) => b.releaseYear - a.releaseYear);
+}
+
+// 5 - Faça uma função que retorne true , se todas as pessoas autoras nasceram no século XX, ou false , caso contrário.
+// const expectedResult = false;
+
+function everyoneWasBornOnSecXX() {
+  return books.every((book) => (
+    book.author.birthYear > 1900 && book.author.birthYear <= 2000)
+  );
+}
+
+//  6 - Faça uma função que retorne true , se algum livro foi lançado na década de 80, e false , caso contrário. 
+// const expectedResult = true;
+
+function someBookWasReleaseOnThe80s() {
+  return books.some((book) => (
+    book.releaseYear >= 1980 && book.releaseYear < 1989
+  ));
+}
+
+//  7 - Faça uma função que retorne true , caso nenhum author tenha nascido no mesmo ano, e false , caso contrário. 
+// const expectedResult = false;
+// reler dnv depois;
+
+function authorUnique() {
+  return books.every((book) =>
+    !books.some((bookSome) =>
+      (bookSome.author.birthYear === book.author.birthYear)
+      && (bookSome.author.name !== book.author.name)));
+}
